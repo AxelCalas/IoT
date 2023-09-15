@@ -1,0 +1,9 @@
+1694797838: mosquitto version 2.0.17 starting
+1694797838: Config loaded from /mosquitto/config/mosquitto.conf.
+1694797838: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1694797838: Create a configuration file which defines a listener to allow remote access.
+1694797838: For more details see https://mosquitto.org/documentation/authentication-methods/
+1694797838: Opening ipv4 listen socket on port 1883.
+1694797838: Opening ipv6 listen socket on port 1883.
+1694797838: Error: Address not available
+1694797838: mosquitto version 2.0.17 running
