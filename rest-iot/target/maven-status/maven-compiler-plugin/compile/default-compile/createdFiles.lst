@@ -1,0 +1,5 @@
+com\roscalas\restiot\configuration\mqttConfiguration.class
+com\roscalas\restiot\controller\AudiovisualController.class
+com\roscalas\restiot\service\AudiovisualService.class
+com\roscalas\restiot\RestIotApplication.class
+com\roscalas\restiot\service\MqttService.class
