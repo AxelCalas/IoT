@@ -55,22 +55,42 @@ docker-compose up
 '''
 
 ## Mosquitto
+Volumes to persist:
+/mosquitto/config
+/mosquitto/data
+/mosquitto/log
+
 '''
-docker run -it -d --name mosquitto -p 1883:1883 -p 9001:9001 -v C:\Users\Axel\Documents\IoT\mosquitto\mosquitto.conf:/mosquitto/config/mosquitto.conf eclipse-mosquitto
+docker run -it -d --name mosquitto -p 1883:1883 -p 9001:9001 -v /mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -v /mosquitto/data:/mosquitto/data -v /mosquitto/log/mosquitto.log:/mosquitto/log/mosquitto.log eclipse-mosquitto
 '''
 
-To run a shell inside container
-'''
-docker exec -it mosquitto sh 
-'''
-
-In order to create a new device execute the following command
+Once container was created I should create a new user using the following command:
 '''
  docker exec -it mosquitto mosquitto_passwd -c /mosquitto/passwd_file <user_name>
 '''
 and then type the password, and the pasword confirmation
 
-To encript passwords
+And only after a user was created I should unncomment the following line in mosquitto.conf
+'''
+password_file /mosquitto/passwd_file
+'''
+
+and restart the container to changes take effect
+'''
+docker restart mosquitto
+'''
+
+To add more users should use 
+'''
+docker exec -it mosquitto mosquitto_passwd -b /mosquitto/passwd_file <user_name> <password>
+'''
+
+In order to run a shell inside container:
+'''
+docker exec -it mosquitto sh 
+'''
+
+To encript passwords file
 '''
 mosquitto_passwd -U passwordfile
 '''
