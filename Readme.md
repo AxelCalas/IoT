@@ -61,7 +61,7 @@ Volumes to persist:
 /mosquitto/log
 
 ```
-docker run -it -d --name mosquitto -p 1883:1883 -p 9001:9001 -v /mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -v /mosquitto/data:/mosquitto/data -v /mosquitto/log/mosquitto.log:/mosquitto/log/mosquitto.log eclipse-mosquitto
+sudo docker run -it -d --name mosquitto -p 1883:1883 -p 9001:9001 -v ~/Proyects/IoT/mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf -v ~/Proyects/IoT/mosquitto/data:/mosquitto/data -v ~/Proyects/IoT/mosquitto/log/mosquitto.log:/mosquitto/log/mosquitto.log eclipse-mosquitto
 ```
 
 Once container was created I should create a new user using the following command:
