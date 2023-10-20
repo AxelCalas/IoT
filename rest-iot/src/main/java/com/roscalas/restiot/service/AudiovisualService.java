@@ -18,9 +18,8 @@ public class AudiovisualService {
     }
 
     public void turnOnAudioVisualDevices() {
-        JSONObject json = new JSONObject();
-        json.put("command", "on");
-        mqttService.publishToTopic(audiovisualTopic, json.toString().getBytes());
+        String payload = "Turn On";
+        mqttService.publishToTopic(audiovisualTopic, payload.getBytes());
     }
 
     public void turnOffAudioVisualDevices() {

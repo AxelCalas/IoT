@@ -18,7 +18,7 @@ docker-compose down
 ## Web server
 In order include the .jar into docker first we need to compile the project
 ```
-mvn clean package 
+mvn clean install 
 ```
 
 Then start the aplication to test it locally:
